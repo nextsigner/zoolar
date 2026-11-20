@@ -29,7 +29,7 @@ Window {
 
 
     //property alias app: r
-    property bool appRotated: Qt.platform.os==='android'?Screen.width>Screen.height:false
+    property bool appRotated: false//Qt.platform.os==='android'?Screen.width>Screen.height:false
     property int botWidth: !app.appRotated?app.fs*1.5:app.fs*0.75
     //property var zoolMap
     property bool dev: false
@@ -67,6 +67,8 @@ Window {
 
         //Aspectos
         property bool showAsps: true
+
+        property bool autoLoad: false
     }
     onAppRotatedChanged: zoolMap.resetView()
     onModoChanged: {
@@ -994,6 +996,7 @@ Window {
     }
 
     Component.onCompleted: {
+        apps.autoLoad=false
         //u.checkPermissions()
         if(u.folderExist('/home/ns'))app.dev=true
         let s=''

@@ -1,1 +1,1 @@
-Se hace funcionar desde Runik
+Se elimina Main.qml
