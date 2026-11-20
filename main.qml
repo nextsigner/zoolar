@@ -17,8 +17,8 @@ import ZmComboBox 1.0
 
 Window {
     id: app
-    width: 500//Qt.platform.os==='android'?Screen.width:608/2
-    height: 500//Qt.platform.os==='android'?Screen.height:1080/2
+    width: Screen.width>Screen.height?Screen.width:Screen.height//Qt.platform.os==='android'?Screen.width:608/2
+    height: Screen.width<Screen.height?Screen.width:Screen.height//Qt.platform.os==='android'?Screen.height:1080/2
     x: 0
     visible: true
     //visibility: Qt.platform.os==='android'?'FullScreen':'Windowed'
@@ -33,7 +33,7 @@ Window {
     property int botWidth: !app.appRotated?app.fs*1.5:app.fs*0.75
     //property var zoolMap
     property bool dev: false
-    property int fs: Qt.platform.os==='android'?Screen.width*0.05:app.width*0.05
+    property int fs: Screen.width>Screen.height?Screen.width*0.02:Screen.height*0.02//Qt.platform.os==='android'?Screen.width*0.05:app.width*0.05
 
     property string modo: 'inicio'
     property bool isSaved: false
@@ -116,6 +116,7 @@ Window {
         border.color: 'blue'
         clip: true
         anchors.centerIn: parent
+        rotation: Screen.width>Screen.height?0:-90
         Flickable{
             anchors.fill: parent
             contentWidth: parent.width

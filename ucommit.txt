@@ -1,1 +1,1 @@
-Se elimina Main.qml
+Se modifica rotation. Prueba 1
