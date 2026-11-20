@@ -1,1 +1,1 @@
-i7: Se agregan archivos de zoolandv2
+Se hace funcionar desde Runik

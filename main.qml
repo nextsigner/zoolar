@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Controls.Material
 
@@ -14,15 +15,19 @@ import ZoolandNumCalc 2.0
 import ZmButton 1.0
 import ZmComboBox 1.0
 
-ApplicationWindow {
+Window {
     id: app
-    width: Qt.platform.os==='android'?Screen.width:608/2
-    height: Qt.platform.os==='android'?Screen.height:1080/2
+    width: 500//Qt.platform.os==='android'?Screen.width:608/2
+    height: 500//Qt.platform.os==='android'?Screen.height:1080/2
     x: 0
     visible: true
-    visibility: Qt.platform.os==='android'?'FullScreen':'Windowed'
+    //visibility: Qt.platform.os==='android'?'FullScreen':'Windowed'
     title: 'ZoolAnd'
     color: 'black'
+
+
+
+
     //property alias app: r
     property bool appRotated: Qt.platform.os==='android'?Screen.width>Screen.height:false
     property int botWidth: !app.appRotated?app.fs*1.5:app.fs*0.75
@@ -47,7 +52,7 @@ ApplicationWindow {
     property var  aIndexSweBodies: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 11, 15, 57, 12, 16, 17, 18, 19, 20]
 
 
-    FontLoader {id: fontAwosome;source: Qt.platform.os==='android'?"assets:/fonts/fontawesome-webfont.ttf":"file:///home/ns/nsp/zoolandv2/android/assets/fonts/fontawesome-webfont.ttf";}
+    FontLoader {id: fontAwosome;source: Qt.platform.os==='android'?"./fonts/fontawesome-webfont.ttf":"file:///home/ns/nsp/zoolandv2/android/assets/fonts/fontawesome-webfont.ttf";}
     Unik{id: u}
     Swe{id: swe}
     Settings{
